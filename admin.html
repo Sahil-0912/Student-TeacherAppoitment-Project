@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin dashboard</title>
+  <link rel="stylesheet" href="assets/css/style2.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+    <style>
+       
+    </style>
+</head>
+
+<body>
+  <div class="mx-auto admin-text">
+    <h3 class="text-center mt-3">Admin Model</h3>
+    <!-- <button class="btn btn-danger">Logout</button> -->
+  </div>
+  <div class="container my-5 p-5 bg-light border createData">
+    <h3>Add Teacher</h3>
+    <form method="post" id="saveData">
+      <div class="my-3">
+        <label for="">Name</label>
+        <input type="text" name="tname" class="form-control">
+      </div>
+      <div class="my-3">
+        <label for="">DepartMent</label>
+        <input type="text" name="dname" class="form-control">
+      </div>
+      <div class="my-3">
+        <label for="">Subject</label>
+        <input type="text" name="sname" class="form-control">
+      </div>
+      <div class="my-3">
+        <button class="btn btn-primary" id="add">Add teacher</button>
+        <button type="button" class="btn btn-primary" id="update">Update</button>
+      </div>
+    </form>
+  </div>
+  <div class="container my-5 p-5 bg-light border">
+    <h3>Teacher List</h3>
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Faculty Name</th>
+          <th scope="col">Depart Name</th>
+          <th scope="col">Subject Name</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody id="tabledata">
+
+      </tbody>
+    </table>
+  </div>
+  </div>
+  <!-- student approve list -->
+  <div class="container my-5 p-5 bg-light border">
+    <h3>Student Approve List</h3>
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Student Name</th>
+          <th scope="col">Student Class</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody id="approvedata">
+
+      </tbody>
+    </table>
+  </div>
+  </div>
+  <script>
+    function signupdata() {
+      const studentdata = JSON.parse(localStorage.getItem('studentList'));
+      let result2 = ""; // Corrected variable name to 'result2'
+
+      studentdata.forEach((student, index) => {
+        result2 +=
+          `<tr>
+            <th scope="row">${index + 1}</th>
+            <td>${student.semail}</td>
+            <td>${student.sclass}</td>
+            <td>
+              <button class="btn-primary" onclick="edit(${index})">Approve</button> 
+              <button class="btn-primary ms-3"  onclick="trash(${index})">Reject</button>
+            </td>
+          </tr>`;
+      });
+      document.querySelector('#approvedata').innerHTML = result2;
+    }
+    signupdata(); 
+  </script>
+</body>
+<script src="assets/js/admin.js"></script>
+<!-- <script src="assets/js/signup.js"></script> -->
+
+</html>

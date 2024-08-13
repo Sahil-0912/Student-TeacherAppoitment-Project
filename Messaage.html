@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/bookappoitment.css">
+</head>
+
+<body>
+    <div class="mx-auto bookappoitment">
+        <h3 class="text-center mt-3">Message</h3>
+        <!-- <button class="btn btn-danger">Logout</button> -->
+    </div>
+    <div class="col-6 mx-auto my-5 p-5 shadow allmsgdata">
+        <h4>Send Message</h4>
+        <form method="post" id="messagedata">
+            <label for="">Teacher List:</label>
+            <select class="form-select" aria-label="Default select example" name="teacherviewlist" id="teacherviewlist">
+                <option class="disabled">Open this select menu</option>
+                <option selected value="sahil vaghela Fullstack devlopemnt">sahil vaghela Fullstack devlopemnt</option>
+                <option value="Ritesh Patdia graphic Designer">Ritesh Patdia Graphic Designer</option>
+                <option value="Sufiyan Flutter">Sufiyan Flutter</option>
+            </select>
+            <div class="my-3">
+                <label for="">Subject:</label>
+                <input type="text" class="form-control" name="subject">
+            </div>
+            <div class="my-3">
+                <label for="">Messaage:</label>
+                <textarea class="form-control" id="message" name="message"></textarea>
+            </div>
+            <div class="my-3">
+                <a href="viewallmsg.html">
+                    <button class="btn btn-dark">Send</button>
+                </a>
+            </div>
+        </form>
+    </div>
+
+</body>
+<script src="assets/js/viewmsg.js"></script>
+
+</html>

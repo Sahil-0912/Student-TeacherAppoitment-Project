@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Sidebar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/student.css">
+    <style>
+        .studentdata {
+            height: 300px;
+            width: 100%;
+            border: 1px solid black;
+            text-align: start;
+            padding-left: 20%;
+            margin: auto;
+        }
+
+        /* body{
+            background-image: url(assets/img/gradient-black-flower-card_925613-15609.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+        } */
+        h4 {
+            color: black;
+            padding-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="sidebar">
+        <h1 class="mt-5 ms-4  fs-4">Student Details</h1>
+        <ul>
+            <li><a href="#">My Account</a></li>
+            <li><a href="#">Edit Profile</a></li>
+            <li><a href="bookappoitment.html">Book AppointMent</a></li>
+            <li><a href="Messaage.html">Send Message</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </div>
+
+    <button class="toggle-btn">&#9776; </button>
+
+    <script src="assets/js/student.js"></script>
+
+    <div class="studentdata">
+
+    </div>
+
+    <script>
+
+        function signupdata() {
+            const studentdata = JSON.parse(sessionStorage.getItem('userlogin'));
+            let result2 = "";
+
+            result2 =
+                `
+                <h4>Student Email: ${studentdata.semail}</h4>
+                <h4>Student Class: ${studentdata.sclass}</h4>
+                <h4>Student Password: ${studentdata.spassword}</h4>
+                <h4>Student ConfirmPassword: ${studentdata.Confirmpwd}</h4>
+                <h4>Student Gender: ${studentdata.gender}</h4>
+            `
+            document.querySelector('.studentdata').innerHTML = result2;
+        }
+        signupdata();
+
+    </script>
+</body>
+
+</html>
