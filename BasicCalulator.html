@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            /* Background color for the body */
+        }
+
+        input[type="text"] {
+            height: 80px;
+            background: transparent;
+            padding-top: 100px;
+            padding-bottom: 50px;
+            font-size: 50px;
+            width: 100%;
+            text-align: right;
+            border: none;
+            color: white;
+        }
+
+        input[type="text"]:focus-visible {
+            border: none;
+            outline: none;
+            border-color: white;
+        }
+
+        .calculator {
+            height: 580px;
+            width: 350px;
+            background: rgb(0, 0, 0);
+            /* display: flex; */
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+        .calculator button {
+            width: 21%;
+            height: 12%;
+            cursor: pointer;
+            font-size: 30px;
+            /* color: white; */
+            font-weight: 600;
+            /* color: white; */
+            margin: 3.6px;
+            border: none;
+            border-radius: 50%;
+        }
+
+        .grey {
+            background-color: #A5A5A5;
+            color: black;
+
+        }
+
+        .zero {
+            width: 50%;
+        }
+
+        .orange {
+            background-color: #FF9F0A;
+            color: white;
+        }
+
+        .trans {
+            background: rgba(216, 210, 210, 0.3);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <input type="text" value="" id="res" id="finalOutput"> <br>
+
+        <button class="grey " type="button" value="c" onclick="clearAll()">c</button>
+        <button class="grey" type="button" value="+/-">+/-</button>
+        <button class="grey" type="button" value="%" onclick="calc(this.value)">%</button>
+        <button class="orange" type="button" value="/" onclick="calc(this.value)">÷</button>
+        <!-- <button value="C" onclick="">c</button> -->
+        <button class="trans" type="button" value="7" onclick="calc(this.value)">7</button>
+        <button class="trans" type="button" value="8" onclick="calc(this.value)">8</button>
+        <button class="trans" type="button" value="9" onclick="calc(this.value)">9</button>
+        <button class="orange" type="button" value="*" onclick="calc(this.value)">×</button><br>
+        <button class="trans" type="button" value="4" onclick="calc(this.value)">4</button>
+        <button class="trans" type="button" value="5" onclick="calc(this.value)">5</button>
+        <button class="trans" type="button" value="6" onclick="calc(this.value)">6</button>
+        <button class="orange" type="button" value="-" onclick="calc(this.value)">-</button><br>
+        <button class="trans" type="button" value="1" onclick="calc(this.value)">1</button>
+        <button class="trans" type="button" value="2" onclick="calc(this.value)">2</button>
+        <button class="trans" type="button" value="3" onclick="calc(this.value)">3</button>
+        <button class="orange" type="button" value="+" onclick="calc(this.value)">+</button><br>
+        <button class="trans" type="button" value="00" onclick="calc(this.value)">00</button>
+        <button class="trans" type="button" value="0" onclick="calc(this.value)">0</button>
+        <button class="trans" type="button" value="." onclick="calc(this.value)">.</button>
+        <button class="orange" type="button" value="=" onclick="output()">=</button>
+    </div>
+            <script src="assets/js/calc.js"></script>
+</body>
+
+</html>
